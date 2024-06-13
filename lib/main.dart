@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uiproject/addword.dart';
+import 'package:uiproject/favorite.dart';
 import 'package:uiproject/login_page.dart';
 
 void main() {
@@ -13,7 +15,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dictionary',
-      home: LogInPage(),
+      home: Favorite(),
     );
   }
 }

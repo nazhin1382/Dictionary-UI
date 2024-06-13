@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uiproject/favorite.dart';
 import 'package:uiproject/meaning_page.dart';
 
 class SearchPage extends StatefulWidget {
@@ -24,7 +25,12 @@ class _SearchPageState extends State<SearchPage> {
         backgroundColor: const Color.fromARGB(255, 243, 231, 245),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Favorite()),
+              );
+            },
             icon: const Icon(Icons.star),
             color: const Color.fromARGB(255, 85, 66, 118),
           ),

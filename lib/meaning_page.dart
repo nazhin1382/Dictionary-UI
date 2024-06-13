@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uiproject/favorite.dart';
 
 class MeaningPage extends StatefulWidget {
   const MeaningPage({super.key});
@@ -22,7 +23,12 @@ class _MeaningPageState extends State<MeaningPage> {
         backgroundColor: Colors.blue[100],
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Favorite()),
+              );
+            },
             icon: const Icon(Icons.star),
             color: const Color.fromARGB(255, 85, 66, 118),
           ),

@@ -48,66 +48,69 @@ class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'LOG IN',
-          style: TextStyle(
-              fontSize: 30,
-              fontStyle: FontStyle.italic,
-              color: Color.fromARGB(255, 60, 37, 99)),
-        ),
-        backgroundColor: Colors.pink[100],
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-                color: Colors.pink[50],
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      const Icon(
-                        Icons.account_circle,
-                        size: 200,
-                        color: Colors.deepPurple,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
-                        child: TextField(
-                          scrollPadding: const EdgeInsets.all(20),
-                          controller: _usernameController,
-                          decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              fillColor: Colors.deepPurple,
-                              hintText: 'username'),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
-                        child: TextField(
-                          obscureText: true,
-                          controller: _passwordController,
-                          decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              fillColor: Colors.deepPurple,
-                              hintText: 'password'),
-                        ),
-                      ),
-                      ElevatedButton(
-                          onPressed: _login,
-                          child: const Text(
-                            'LogIn',
-                            style: TextStyle(fontSize: 25),
-                          ))
-                    ],
-                  ),
-                )),
+        appBar: AppBar(
+          title: const Text(
+            'LOG IN',
+            style: TextStyle(
+                fontSize: 30,
+                fontStyle: FontStyle.italic,
+                color: Color.fromARGB(255, 60, 37, 99)),
           ),
-        ],
-      ),
-    );
+          backgroundColor: Colors.pink[100],
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: Container(
+                  color: Colors.pink[50],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        const Icon(
+                          Icons.account_circle,
+                          size: 200,
+                          color: Colors.deepPurple,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
+                          child: TextField(
+                            scrollPadding: const EdgeInsets.all(20),
+                            controller: _usernameController,
+                            decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                fillColor: Colors.deepPurple,
+                                hintText: 'username'),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
+                          child: TextField(
+                            obscureText: true,
+                            controller: _passwordController,
+                            decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                fillColor: Colors.deepPurple,
+                                hintText: 'password'),
+                          ),
+                        ),
+                        ElevatedButton(
+                            onPressed: _login,
+                            child: const Text(
+                              'LogIn',
+                              style: TextStyle(fontSize: 25),
+                            ))
+                      ],
+                    ),
+                  )),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ));
   }
 }
