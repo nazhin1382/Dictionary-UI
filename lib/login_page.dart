@@ -19,7 +19,8 @@ class _LogInPageState extends State<LogInPage> {
     final String enteredUsername = _usernameController.text.trim();
     final String enteredPassword = _passwordController.text.trim();
 
-    if (enteredUsername == username && enteredPassword == password) {
+    if (enteredUsername.toLowerCase() == username.toLowerCase() &&
+        enteredPassword == password) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const SearchPage()),
       );
