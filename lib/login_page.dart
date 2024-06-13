@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uiproject/SearchPage.dart';
+import 'package:uiproject/search_page.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
