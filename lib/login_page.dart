@@ -9,22 +9,56 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
-  final TextEditingController _username = TextEditingController();
-  final TextEditingController __password = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  final String username = "admin";
+  final String password = "admin";
+
+  void _login() {
+    final String enteredUsername = _usernameController.text.trim();
+    final String enteredPassword = _passwordController.text.trim();
+
+    if (enteredUsername == username && enteredPassword == password) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const SearchPage()),
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Invalid Credentials"),
+            content: const Text("The username or password is incorrect."),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'LOG IN',
-            style: TextStyle(
-                fontSize: 30,
-                fontStyle: FontStyle.italic,
-                color: Color.fromARGB(255, 60, 37, 99)),
-          ),
-          backgroundColor: Colors.pink[100],
+      appBar: AppBar(
+        title: const Text(
+          'LOG IN',
+          style: TextStyle(
+              fontSize: 30,
+              fontStyle: FontStyle.italic,
+              color: Color.fromARGB(255, 60, 37, 99)),
         ),
-        body: Column(children: [
+        backgroundColor: Colors.pink[100],
+      ),
+      body: Column(
+        children: [
           Expanded(
             child: Container(
                 color: Colors.pink[50],
@@ -41,7 +75,7 @@ class _LogInPageState extends State<LogInPage> {
                       padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
                       child: TextField(
                         scrollPadding: const EdgeInsets.all(20),
-                        controller: _username,
+                        controller: _usernameController,
                         decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             fillColor: Colors.deepPurple,
@@ -54,7 +88,7 @@ class _LogInPageState extends State<LogInPage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
                       child: TextField(
-                        controller: __password,
+                        controller: _passwordController,
                         decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             fillColor: Colors.deepPurple,
@@ -62,13 +96,7 @@ class _LogInPageState extends State<LogInPage> {
                       ),
                     ),
                     ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SearchPage()),
-                          );
-                        },
+                        onPressed: _login,
                         child: const Text(
                           'LogIn',
                           style: TextStyle(fontSize: 25),
@@ -79,6 +107,8 @@ class _LogInPageState extends State<LogInPage> {
           const SizedBox(
             height: 10,
           ),
-        ]));
+        ],
+      ),
+    );
   }
 }
