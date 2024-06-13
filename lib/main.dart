@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Dictionary',
+      title: 'Dictionary', // hello from iltan
       home: LogInPage(),
     );
   }
