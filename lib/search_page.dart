@@ -9,7 +9,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  final TextEditingController _SearchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +61,7 @@ class _SearchPageState extends State<SearchPage> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(15, 15, 0, 15),
                     child: TextField(
-                      controller: _SearchController,
+                      controller: _searchController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hoverColor: Colors.deepPurpleAccent,
