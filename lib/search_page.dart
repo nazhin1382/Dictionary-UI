@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uiproject/MeaningPage.dart';
+import 'package:uiproject/meaning_page.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
