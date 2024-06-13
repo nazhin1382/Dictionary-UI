@@ -63,51 +63,48 @@ class _LogInPageState extends State<LogInPage> {
           Expanded(
             child: Container(
                 color: Colors.pink[50],
-                height: 250,
-                width: 500,
-                child: Column(
-                  children: [
-                    const Icon(
-                      Icons.account_circle,
-                      size: 200,
-                      color: Colors.deepPurple,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
-                      child: TextField(
-                        scrollPadding: const EdgeInsets.all(20),
-                        controller: _usernameController,
-                        decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            fillColor: Colors.deepPurple,
-                            hintText: 'username'),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const Icon(
+                        Icons.account_circle,
+                        size: 200,
+                        color: Colors.deepPurple,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
-                      child: TextField(
-                        obscureText: true,
-                        controller: _passwordController,
-                        decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            fillColor: Colors.deepPurple,
-                            hintText: 'password'),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
+                        child: TextField(
+                          scrollPadding: const EdgeInsets.all(20),
+                          controller: _usernameController,
+                          decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              fillColor: Colors.deepPurple,
+                              hintText: 'username'),
+                        ),
                       ),
-                    ),
-                    ElevatedButton(
-                        onPressed: _login,
-                        child: const Text(
-                          'LogIn',
-                          style: TextStyle(fontSize: 25),
-                        ))
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(40, 8, 40, 8),
+                        child: TextField(
+                          obscureText: true,
+                          controller: _passwordController,
+                          decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              fillColor: Colors.deepPurple,
+                              hintText: 'password'),
+                        ),
+                      ),
+                      ElevatedButton(
+                          onPressed: _login,
+                          child: const Text(
+                            'LogIn',
+                            style: TextStyle(fontSize: 25),
+                          ))
+                    ],
+                  ),
                 )),
-          ),
-          const SizedBox(
-            height: 10,
           ),
         ],
       ),
